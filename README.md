@@ -1,7 +1,7 @@
-# sdwebuiapi
-API client for AUTOMATIC1111/stable-diffusion-webui
+# rdwebuiapi
+API client for Run Diffusions AUTOMATIC1111/stable-diffusion-webui
 
-Supports txt2img, img2img, extra-single-image, extra-batch-images API calls.
+Supports txt2img, img2img, extra-single-image, extra-batch-images API calls. (+ others)
 
 API support have to be enabled from webui. Add --api when running webui.
 It's explained [here](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/API).
@@ -14,28 +14,31 @@ API calls are (almost) direct translation from http://127.0.0.1:7860/docs as of 
 # Install
 
 ```
-pip install webuiapi
+pip install rdwebuiapi
 ```
 
 # Usage
 
-webuiapi_demo.ipynb contains example code with original images. Images are compressed as jpeg in this document.
+rdwebuiapi_demo.ipynb contains example code with original images. Images are compressed as jpeg in this document.
 
 ## create API client
 ```
-import webuiapi
+import rdwebuiapi
 
 # create API client
 api = webuiapi.WebUIApi()
 
+# create API client using Run Diffusion instance id
+# api = rdwebuiapi.WebUIApi(instance_id="gyh5hygy")
+
 # create API client with custom host, port
-#api = webuiapi.WebUIApi(host='127.0.0.1', port=7860)
+#api = rdwebuiapi.WebUIApi(host='127.0.0.1', port=7860)
 
 # create API client with custom host, port and https
-#api = webuiapi.WebUIApi(host='webui.example.com', port=443, use_https=True)
+#api = rdwebuiapi.WebUIApi(host='webui.example.com', port=443, use_https=True)
 
 # create API client with default sampler, steps.
-#api = webuiapi.WebUIApi(sampler='Euler a', steps=20)
+#api = rdwebuiapi.WebUIApi(sampler='Euler a', steps=20)
 
 # optionally set username, password when --api-auth=username:password is set on webui.
 # username, password are not protected and can be derived easily if the communication channel is not encrypted.
