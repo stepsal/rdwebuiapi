@@ -1,5 +1,5 @@
 # rdwebuiapi
-API client for Run Diffusions AUTOMATIC1111/stable-diffusion-webui
+API client for Run Diffusions installation of AUTOMATIC1111/stable-diffusion-webui
 
 Supports txt2img, img2img, extra-single-image, extra-batch-images API calls. (+ others)
 
@@ -26,7 +26,7 @@ rdwebuiapi_demo.ipynb contains example code with original images. Images are com
 import rdwebuiapi
 
 # create API client
-api = webuiapi.WebUIApi()
+api = rdwebuiapi.WebUIApi()
 
 # create API client using Run Diffusion instance id
 # api = rdwebuiapi.WebUIApi(instance_id="gyh5hygy")
